@@ -1,0 +1,16 @@
+.heading{
+    width: 100%;
+}
+.heading h3{
+    display: inline;
+    text-align: left;
+}
+.heading button{
+    float: right;
+    background-color: aqua;
+    border: 1px black solid;
+}
+#start{
+    color: white;
+    background-color: black;
+}
