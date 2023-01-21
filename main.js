@@ -1,6 +1,7 @@
 rightWrist_x = "";
 rightWrist_y = "";
 rightWrist_score = "";
+game_status = "";
 /*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
@@ -36,6 +37,7 @@ function setup(){
 
 function draw(){
 
+  if(game_status = "start"){
  background(0);
  image(video, 0, 0, 700, 600);
 
@@ -62,7 +64,6 @@ function draw(){
     fill("#FFA500");
     stroke("#FFA500");
    var paddle2y =ball.y-paddle2Height/2;  rect(paddle2Y,paddle2y,paddle2,paddle2Height,100);
-    
     //function midline call
     midline();
     
@@ -79,7 +80,7 @@ function draw(){
       fill("#000000");
         stroke("#ffffff");
         circle(rightWrist_x, rightWrist_y, 20);
-    }
+    }}
 }
 
 
@@ -188,4 +189,8 @@ function gotPoses(results){
     rightWrist_y = results[0].pose.rightWrist.y;
     rightWrist_score = results[0].pose.keypoints[10].score;
   }
+}
+function startGame(){
+  game_status = "start";
+  document.getElementById("status").innerHTML = "Model is loading";
 }
